@@ -86,6 +86,7 @@ docker stop nixos-temp-for-updating-nix > /dev/null 2>&1
 docker rm -Rf nginx-temp-for-updating-nix > /dev/null 2>&1
 docker rm -Rf nixos-temp-for-updating-nix > /dev/null 2>&1
 echo "Clean file..."
+cd ..
 rm -Rf nixpkgs
 rm -Rf html
 rm -Rf out.txt
