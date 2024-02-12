@@ -60,7 +60,7 @@ docker run --rm --name nixos-temp-for-updating-nix \
     nix-shell -p $PKGS_NAME \
   " > out.txt 2>&1
 # get true hash
-TRUE_HASH=$(< out.txt tail -n 2 | head -n 1 | grep -o "sha256.*=")
+TRUE_HASH=$(< out.txt tail | grep -o "sha256.*=" | tail -n1)
 echo "HASH GENERATED : $TRUE_HASH"
 
 # apply the true hash
