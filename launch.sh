@@ -42,6 +42,10 @@ docker run --rm --name nginx-temp-for-updating-nix \
   -v "$(pwd)/html":/usr/share/nginx/html:ro \
   -d nginx
 
+# wait nginx
+echo "Wait nginx..."
+sleep 4
+
 NGINX_DELIVER_IP=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' \
   nginx-temp-for-updating-nix)
 
